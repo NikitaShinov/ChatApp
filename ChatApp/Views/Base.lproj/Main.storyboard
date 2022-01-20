@@ -12,7 +12,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="ST7-ec-Bke">
             <objects>
-                <viewController id="NkA-ev-CtS" customClass="WelcomeViewController" customModule="Flash_Chat_iOS13" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NkA-ev-CtS" customClass="WelcomeViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gk9-sp-tmW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +83,7 @@
         <!--Register View Controller-->
         <scene sceneID="Ceu-7t-xf7">
             <objects>
-                <viewController id="BJo-fs-h9V" customClass="RegisterViewController" customModule="Flash_Chat_iOS13" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BJo-fs-h9V" customClass="RegisterViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rf2-Uc-s3t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,7 +168,7 @@
                     <connections>
                         <outlet property="emailTextfield" destination="96A-Dr-TPB" id="bWF-FR-vdY"/>
                         <outlet property="passwordTextfield" destination="C8z-tK-ewt" id="Fag-1X-AkV"/>
-                        <segue destination="zt2-1F-XVI" kind="show" identifier="reGisterToChat" id="1rC-vT-gbl"/>
+                        <segue destination="zt2-1F-XVI" kind="show" identifier="registerToChat" id="1rC-vT-gbl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Vb-3q-j2K" sceneMemberID="firstResponder"/>
@@ -178,7 +178,7 @@
         <!--Login View Controller-->
         <scene sceneID="ZrB-hu-TcY">
             <objects>
-                <viewController id="ESS-r8-kaE" customClass="LoginViewController" customModule="Flash_Chat_iOS13" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ESS-r8-kaE" customClass="LoginViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4xc-nf-UnO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -273,7 +273,7 @@
         <!--Chat View Controller-->
         <scene sceneID="Uqw-MS-Str">
             <objects>
-                <viewController id="zt2-1F-XVI" customClass="ChatViewController" customModule="Flash_Chat_iOS13" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zt2-1F-XVI" customClass="ChatViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iWZ-Wd-25e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -342,7 +342,13 @@
                             <constraint firstItem="siz-qR-uc1" firstAttribute="leading" secondItem="dEM-3K-bPx" secondAttribute="leading" id="zoD-6W-1JR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5dK-gz-8mD"/>
+                    <navigationItem key="navigationItem" id="5dK-gz-8mD">
+                        <barButtonItem key="rightBarButtonItem" image="person.fill.xmark" catalog="system" id="JiR-TL-DkV">
+                            <connections>
+                                <action selector="logOutPressed:" destination="zt2-1F-XVI" id="hen-Xe-DE9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="messageTextfield" destination="CKb-Fk-CuU" id="bnU-7C-Mtl"/>
                         <outlet property="tableView" destination="faW-vV-fsN" id="lAH-Qc-uGR"/>
@@ -372,10 +378,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tkt-ru-uQn"/>
+        <segue reference="1rC-vT-gbl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
+        <image name="person.fill.xmark" catalog="system" width="128" height="88"/>
         <image name="textfield" width="298" height="93"/>
         <namedColor name="BrandBlue">
             <color red="0.16500000655651093" green="0.77999997138977051" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
