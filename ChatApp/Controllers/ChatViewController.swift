@@ -15,11 +15,7 @@ class ChatViewController: UIViewController {
     
     let db = Firestore.firestore()
     
-    var messages: [Message] = [
-        Message(sender: "1@2.com", body: "Hey"),
-        Message(sender: "a@b.com", body: "Hello!"),
-        Message(sender: "1@2.com", body: "What's up?")
-    ]
+    var messages: [Message] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +28,12 @@ class ChatViewController: UIViewController {
     }
     
     func loadMessages() {
-        messages = []
-        db.collection(Constants.FStore.collectionName).getDocuments { snapshot, error in
+        db.collection(Constants.FStore.collectionName)
+            .order(by: Constants.FStore.dateField)
+            .addSnapshotListener { snapshot, error in
+            self.messages = []
             if let e = error {
-                print ("Error retrieving data")
+                print ("Error retrieving data, \(e)")
             } else {
                 if let snapshotDocuments = snapshot?.documents {
                     for doc in snapshotDocuments {
@@ -57,7 +55,11 @@ class ChatViewController: UIViewController {
     @IBAction func sendPressed(_ sender: UIButton) {
         if let messageBody = messageTextfield.text,
            let messageSender = Auth.auth().currentUser?.email {
-            db.collection(Constants.FStore.collectionName).addDocument(data: [Constants.FStore.senderField: messageSender, Constants.FStore.bodyField: messageBody]) { error in
+            db.collection(Constants.FStore.collectionName).addDocument(data: [
+                Constants.FStore.senderField: messageSender,
+                Constants.FStore.bodyField: messageBody,
+                Constants.FStore.dateField: Date().timeIntervalSince1970
+            ]) { error in
                 if let e = error {
                     print (e)
                 } else {
