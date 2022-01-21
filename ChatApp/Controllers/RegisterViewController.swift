@@ -20,7 +20,7 @@ class RegisterViewController: UIViewController {
                     self.popUpWarning()
                 } else {
                      //Navigate to chat vc
-                    self.performSegue(withIdentifier: "registerToChat", sender: self)
+                    self.performSegue(withIdentifier: Constants.registerSegue, sender: self)
                 }
             }
         }

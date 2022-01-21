@@ -20,6 +20,10 @@
 		50846A9D2799D1BF00B4C008 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50846A9C2799D1BF00B4C008 /* GoogleService-Info.plist */; };
 		50846AA02799D89100B4C008 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 50846A9F2799D89100B4C008 /* FirebaseAuth */; };
 		50846AA22799D89100B4C008 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 50846AA12799D89100B4C008 /* FirebaseFirestore */; };
+		50846AA6279A2D1F00B4C008 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50846AA5279A2D1F00B4C008 /* Constants.swift */; };
+		50846AAA279A321000B4C008 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50846AA9279A321000B4C008 /* Message.swift */; };
+		50846AAD279A377800B4C008 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50846AAB279A377800B4C008 /* MessageCell.swift */; };
+		50846AAE279A377800B4C008 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50846AAC279A377800B4C008 /* MessageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,10 @@
 		50846A952799AF4A00B4C008 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50846A972799AF5600B4C008 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		50846A9C2799D1BF00B4C008 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		50846AA5279A2D1F00B4C008 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		50846AA9279A321000B4C008 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		50846AAB279A377800B4C008 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		50846AAC279A377800B4C008 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		846911F4C3B1027628FDAEB1 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEDC56657B8BB03BF47BAE7 /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		B69A2F474BCC81AC5E091360 /* Pods-ChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.debug.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +119,8 @@
 		50846A9A2799B02100B4C008 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				50846AA5279A2D1F00B4C008 /* Constants.swift */,
+				50846AA9279A321000B4C008 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -119,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				50846A832799AED000B4C008 /* Main.storyboard */,
+				50846AAB279A377800B4C008 /* MessageCell.swift */,
+				50846AAC279A377800B4C008 /* MessageCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50846AAE279A377800B4C008 /* MessageCell.xib in Resources */,
 				50846A8A2799AED400B4C008 /* LaunchScreen.storyboard in Resources */,
 				50846A9D2799D1BF00B4C008 /* GoogleService-Info.plist in Resources */,
 				50846A872799AED400B4C008 /* Assets.xcassets in Resources */,
@@ -240,8 +253,11 @@
 				50846A942799AF3C00B4C008 /* RegisterViewController.swift in Sources */,
 				50846A982799AF5600B4C008 /* ChatViewController.swift in Sources */,
 				50846A922799AF2E00B4C008 /* WelcomeViewController.swift in Sources */,
+				50846AA6279A2D1F00B4C008 /* Constants.swift in Sources */,
+				50846AAA279A321000B4C008 /* Message.swift in Sources */,
 				50846A7E2799AED000B4C008 /* AppDelegate.swift in Sources */,
 				50846A802799AED000B4C008 /* SceneDelegate.swift in Sources */,
+				50846AAD279A377800B4C008 /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
